@@ -25,6 +25,7 @@ For the third ball tracking task, our approach has two passes. The first one vis
 Since this approach requires two passes, it does not use the genericTrack function used by other tests.
 
 ### Ball 4 (moving background)
+<img height="350" src="https://raw.githubusercontent.com/ut-cs378-vision-2014fall/course-info/master/images/ball_frame.png"/>
 
 For the fourth ball tracking task, we use a similar approach to the HoughCirclesBallDetector from the first task with a few adjustments. The blur radius is a bit different. If the detected radius is very different from that last one, it is ignored and the previous radius is taken. There are a few problems with this that we could potentially fix if we had more time:
 
@@ -33,6 +34,8 @@ For the fourth ball tracking task, we use a similar approach to the HoughCircles
 2. It duplicates a lot of code from HoughCirclesBallDetector, which should have just been itself parameterized with the small changes we made to its behavior.
 
 ### Face
+
+<img height="350" src="https://raw.githubusercontent.com/ut-cs378-vision-2014fall/course-info/master/images/face_track_frame.png"/>
 
 For the face tracking, we use the Haar-cascade Face Detection classifier built into OpenCV with a sample training dataset (haarcascade_frontalface_default.xml) we found online. It turns out the results from this are so good (i.e. not noisy) that using a NullTracker (one of our mock classes, which simply predicts the last thing that was measured, with no smoothing) works fine (and in fact the KalmanTracker's reluctance results in a poorer result).
 
